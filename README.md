@@ -36,7 +36,7 @@ In addition to adding the currently playing track to liked songs, it will also o
 
 ## Make available from Spotlight Search
 
-Create a file called _spotilike.command_ in a location indexed by Spotlight, e.g. _~/Documents_ or wherever else you like, with the following contents. Replace `PATH_TO_SPOTILIKE` with the location of _spotilike.py_, e.g. if you cloned this repository to _~/Documents/spotilike_ then `PATH_TO_SPOTILIKE` would be _~/Documents/spotilike/spotilike.py_:
+Create a file called _spotilike.command_ in a location indexed by Spotlight, e.g. _~/Documents_ or wherever else you like, with the following contents. Replace `PATH_TO_SPOTILIKE` with the folder containing _spotilike.py_, e.g. if you cloned this repository to _~/Documents/spotilike_ then `PATH_TO_SPOTILIKE` would be _~/Documents/spotilike_:
 
 ```
 #!/bin/bash
