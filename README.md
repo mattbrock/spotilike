@@ -52,4 +52,6 @@ Make this file executable: `chmod 755 spotilike.command`.
 
 Give your Mac a minute for the Spotlight index to update, then you should be able to bring up Spotlight Search and type "spotilike.command", and it should show up in the results so you can run it. After you've used it a few times it should appear quickly after you start typing it.
 
-Once run in this way, it should show up in your system notifications to confirm that the song has been successfully added to your liked tracks in Spotify.
+Once run in this way, it should show up in your system notifications to confirm that the song has been successfully added to your liked tracks in Spotify:
+
+![](.assets/notification_screenshot.png)
