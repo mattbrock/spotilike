@@ -31,6 +31,8 @@ Please feel free to fork this and improve on it.
 Run application:
 
     python3 spotilike.py
+    
+In addition to adding the currently playing track to liked songs, it will also output the name of the currently playing track (which can be grabbed by wrapper scripts, e.g. the script below to access this functionality from Spotlight).
 
 ## Make available from Spotlight Search
 
