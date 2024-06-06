@@ -32,7 +32,7 @@ Run application:
 
     python3 spotilike.py
 
-## Making available from Spotlight Search
+## Make available from Spotlight Search
 
 Create a file called _spotilike.command_ in a location indexed by Spotlight, e.g. _~/Documents_ or wherever else you like, with the following contents (replacing `PATH_TO_LOCATION_OF_COMMAND` with the location of _spotilike.command_, e.g. _/Users/bob/Documents_ or wherever you're putting it:
 
@@ -42,9 +42,12 @@ Create a file called _spotilike.command_ in a location indexed by Spotlight, e.g
 cd PATH_TO_LOCATION_OF_COMMAND
 . setup
 source .venv/bin/activate
-python3 spotilike.py
+track_name=$(python3 spotilike.py)
+[ $? -eq 0 ] && osascript -e "display notification \"Added currently playing track $track_name to liked songs.\" with title \"SpotiLike\""
 ```
 
 Make the file executable: `chmod 755 spotilike.command`.
 
-Give your Mac a minute for the Spotlight index to update, then you should be able to bring up Spotlight Search and type "spotilike.command", and it should show up in the results. After you've used it a few times it should appear quickly after you start typing it.
+Give your Mac a minute for the Spotlight index to update, then you should be able to bring up Spotlight Search and type "spotilike.command", and it should show up in the results so you can run it. After you've used it a few times it should appear quickly after you start typing it.
+
+Once run in this way, it should show up in your system notifications to confirm that the song has been successfully added to your liked tracks in Spotify.

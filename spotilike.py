@@ -9,8 +9,11 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
 # Get currently playing track and add to saved tracks
 try:
-  current_track = spotify.currently_playing()['item']['id']
+  current_track_id = spotify.currently_playing()['item']['id']
+  current_track_name = spotify.currently_playing()['item']['name']
 except TypeError:
   print('Current track is not available')
 else:
-  spotify.current_user_saved_tracks_add(tracks=[current_track])
+  spotify.current_user_saved_tracks_add(tracks=[current_track_id])
+
+print(current_track_name)
