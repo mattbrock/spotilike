@@ -36,19 +36,9 @@ In addition to adding the currently playing track to liked songs, it will also o
 
 ## Make available from Spotlight Search
 
-Create a file called _spotilike.command_ in a location indexed by Spotlight, e.g. _~/Documents_ or wherever else you like, with the following contents. Replace `PATH_TO_SPOTILIKE` with the folder containing _spotilike.py_, e.g. if you cloned this repository to _~/Documents/spotilike_ then `PATH_TO_SPOTILIKE` would be _~/Documents/spotilike_:
+Copy _spotilike.command_ to a location indexed by Spotlight, e.g. _~/Documents_ or wherever else you like, then edit the copied file and replace `PATH_TO_SPOTILIKE_REPO` with the folder containing _spotilike.py_, e.g. if you cloned this repository to _~/Documents/spotilike_ then `PATH_TO_SPOTILIKE_REPO` would be _~/Documents/spotilike_.
 
-```
-#!/bin/bash
-
-cd PATH_TO_SPOTILIKE
-. setup
-source .venv/bin/activate
-track_name=$(python3 spotilike.py)
-[ $? -eq 0 ] && osascript -e "display notification \"Added currently playing track $track_name to liked songs.\" with title \"SpotiLike\""
-```
-
-Make this file executable: `chmod 755 spotilike.command`.
+Make this file executable: `chmod 755 ~/Documents/spotilike.command` (modify this location accordingly if you placed it somewhere other than _~/Documents_.
 
 Give your Mac a minute for the Spotlight index to update, then you should be able to bring up Spotlight Search and type "spotilike.command", and it should show up in the results so you can run it. After you've used it a few times it should appear quickly after you start typing it.
 
