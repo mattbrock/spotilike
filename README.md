@@ -45,3 +45,29 @@ Give your Mac a minute for the Spotlight index to update, then you should be abl
 Once run in this way, it should show up in your system notifications to confirm that the song has been successfully added to your liked tracks in Spotify, e.g:
 
 ![](.assets/notification_screenshot.png)
+
+## Assign to keyboard shortcut
+
+Open the Automator application and create a new Quick Action. Configure it so that the workflow receives no input in any application, then add the Run Shell Script action, then paste in the following:
+
+```
+cd ~/Documents/mattbrock/spotilike
+. setup
+source .venv/bin/activate
+track_name=$(python3 spotilike.py)
+[ $? -eq 0 ] && osascript -e "display notification \"Added currently playing track $track_name to liked songs.\" with title \"SpotiLike\""
+```
+
+At this point, you should see this:
+
+![](.assets/automator_screenshot.png)
+
+Save it as "SpotiLike", then it should appear as a service file in _~/Library/Services_, and it should also appear in the Services menu from whatever application you are currently in.
+
+Then you can go to System Settings -> Keyboard -> Keyboard Shortcuts -> Services and you should see "SpotiLike" under "General". Make sure it's ticked and give it a suitable shortcut.
+
+It may need permissions adding. In System Settings -> Privacy & Security -> Automation -> Spotify, ensure System Events is enabled.
+
+Now when you use the keyboard shortcut, it should show up in your system notifications to confirm that the song has been successfully added to your liked tracks in Spotify, e.g:
+
+![](.assets/notification_screenshot.png)
