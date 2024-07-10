@@ -4,9 +4,9 @@ Like the currently playing track in Spotify.
 
 ## Purpose
 
-I got annoyed with having to switch to the Spotify app, then to find the currently playing track, then to find the button to add the track to my liked songs. I wanted to be able to quickly start typing something into Spotlight Search to like the currently playing track without having to switch apps, spaces, etc.
+I got annoyed with having to switch to the Spotify app, then to find the currently playing track, then to find the button to add the track to my liked songs. I wanted to be able to quickly start typing something into Spotlight Search to like the currently playing track without having to switch apps, spaces, etc., or alternatively to just hit a keyboard shortcut from anywhere to like the currently playing track.
 
-This is a fairly quick and dirty solution, but it works to achieve what I wanted on macOS.
+This is a fairly quick and dirty solution, but it works to achieve what I wanted on macOS. It can work via typing a command in the Terminal, or via Spotlight Search, or by simply hitting a keyboard shortcut from anywhere.
 
 Please feel free to fork this and improve on it.
 
